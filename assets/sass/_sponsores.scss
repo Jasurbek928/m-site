@@ -1,0 +1,39 @@
+#sponsores {
+  padding: 75px 0;
+
+  .brands {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: $bg-light;
+    margin: 3rem 0;
+    display: grid;
+    grid-gap: 1px;
+    
+    .brand {
+      background-color: #fff;
+      filter: grayscale(100%);
+      // justify-content: center;
+      // transition: .25s ease;
+      // align-items: center;
+      // display: flex;
+      @extend %jcc, %tr-25, %aic, %df;
+      min-height: 200px;
+      padding: 30px 0;
+
+      &:hover {
+        filter: grayscale(0);
+      }
+
+      > * {
+        max-width: 265px;
+      }
+    }
+
+    @media(max-width: 960px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media(max-width: 550px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

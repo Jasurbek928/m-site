@@ -1,0 +1,41 @@
+*,
+::after,
+::before {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  outline: none;
+  // padding: 0;
+  // margin: 0;
+  @extend %m-0, %p-0;
+}
+
+html {
+  font-family: 'font-primary', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  // color: $color-primary;
+  // cursor: default;
+  @extend %c-1, %cud;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  // cursor: pointer;
+  @extend %cup;
+}

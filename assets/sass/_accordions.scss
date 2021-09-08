@@ -1,0 +1,86 @@
+#accordions {
+  background-color: $bg-light;
+  padding: 5rem 0;
+
+  h2 {
+    // color: $color-primary;
+    @extend %c-1;
+    margin-bottom: 2rem;
+  }
+
+  .accordion {
+    // margin-right: auto;
+    // margin-left: auto;
+    @extend %mx-auto;
+    max-width: 750px;
+
+    .accordion-head {
+      // justify-content: space-between;
+      // align-items: center;
+      // cursor: pointer;
+      // display: flex;
+      @extend %jcsb, %aic, %cup, %df;
+      padding: 27px 0;
+
+      h4 {
+        // color: $color-secondary;
+        @extend %c-2;
+        padding-right: 1rem;
+        font-size: 24px;
+
+        @media(max-width: 1111px) {
+          font-size: 22px;
+        }
+      }
+
+      span {
+        // transition: .25s ease;
+        // display: flex;
+        @extend %tr-25, %df;
+        border-radius: 50%;
+        max-height: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        min-width: 40px;
+
+        svg {
+          // color: $color-secondary;
+          // transition: .25s ease;
+          // margin: auto;
+          @extend %c-2, %tr-25, %m-auto;
+        }
+
+        &.accordion-active svg {
+          transform: rotate(-45deg);
+        }
+      }
+
+      &:hover span {
+        // background-color: $color-secondary;
+        @extend %bg-2;
+        
+        svg {
+          // color: #fff;
+          @extend %c-white;
+        }
+      }
+    }
+
+    .accordion-panel {
+      // transition: .25s ease;
+      // overflow: hidden;
+      @extend %tr-25, %oh;
+      height: 0;
+      
+      .accordion-content {
+        padding-bottom: 40px;
+        line-height: 1.55;
+        font-size: 18px;
+
+        @media(max-width: 1111px) {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

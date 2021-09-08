@@ -1,0 +1,246 @@
+#design {
+  background-color: $bg-light;
+  overflow-x: hidden;
+  
+  .desk {
+    padding: 30px 0 60px;
+    // display: flex;
+    @extend %df;
+
+    > * {
+      width: 50%;
+    }
+
+    .text {
+      padding-left: 120px;
+      padding-right: 30px;
+      // display: flex;
+      @extend %df;
+      
+      .wrap {
+        max-width: 460px;
+        // margin: auto;
+        @extend %m-auto;
+
+        h3 {
+          padding-bottom: 17px;
+          color: $bg-orange;
+          font-size: 32px;
+        }
+  
+        p {
+          line-height: 1.55;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .img img {
+      max-width: initial;
+      max-height: 550px;
+    }
+
+    @media(max-width: 960px) {
+      flex-direction: column;
+
+      > * {
+        width: 100%;
+      }
+
+      .text {
+        padding: 20px 0 50px;
+
+        .wrap {
+          max-width: 95%;
+        }
+      }
+
+      .img img {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 550px) {
+      .text .wrap p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .link {
+    // text-align: center;
+    @extend %txt-cnr;
+    
+    .btn {
+      background-color: #09A15F;
+    }
+  }
+
+  .bottom {
+    // position: relative;
+    // display: flex;
+    @extend %por, %df;
+    max-height: 900px;
+    height: 100vh;
+
+    .drawer {
+      max-width: 480px;
+      // margin: auto;
+      @extend %m-auto;
+    }
+
+    [class*='cross-'], [class*='drawer-'] {
+      transform: translate(50%, 50%);
+      // position: absolute;
+      // bottom: 50%;
+      // right: 50%;
+      @extend %poa, %b-50, %r-50;
+    }
+
+    [class*='drawer-'] {
+      // align-items: center;
+      // visibility: hidden;
+      // display: flex;
+      // opacity: 0;
+      @extend %aic, %vh, %df;
+      transition: 1s ease-out;
+      max-width: 450px;
+
+      img {
+        border: 5px solid lighten($color-secondary, 10);
+        border-radius: 50%;
+        object-fit: cover;
+        min-height: 200px;
+        max-height: 200px;
+        min-width: 200px;
+        max-width: 200px;
+      }
+
+      p {
+        line-height: 1.5;
+        font-size: 18px;
+        padding: 1rem;
+      }
+    }
+
+    [class*='cross-'] {
+      // cursor: pointer;
+      @extend %cup;
+      max-width: 50px;
+      z-index: 1;
+
+      &:hover + [class*='drawer-'] {
+        // visibility: visible;
+        // opacity: 1;
+        @extend %vv;
+      }
+    }
+
+    .cross-0 {
+      transform: translate(85px, -200px);
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-out;
+      animation-name: crossScaler;
+      animation-duration: 1.75s;
+    }
+
+    @keyframes crossScaler {
+      98% {
+        transform: translate(85px, -200px) scale(.2);
+        opacity: .2;
+      }
+    }
+
+    .cross-1 {
+      transform: translate(0, -160px);
+
+      + .drawer-1 {
+        transform: translate(550px, -100px);
+      }
+    }
+
+    .cross-2 {
+      transform: translate(-80px, -150px);
+
+      + .drawer-2 {
+        transform: translate(-150px, -100px);
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+    }
+
+    .cross-3 {
+      transform: translate(85px, -135px);
+
+      + .drawer-3 {
+        transform: translate(550px, -20px);
+      }
+    }
+
+    .cross-4 {
+      transform: translate(55px, -35px);
+
+      + .drawer-4 {
+        transform: translate(570px, 80px);
+      }
+    }
+
+    .cross-5 {
+      transform: translate(-145px, -25px);
+
+      + .drawer-5 {
+        transform: translate(-225px, 55px);
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        max-width: 300px;
+      }
+    }
+
+    .cross-6 {
+      transform: translate(-65px, 22px);
+
+      + .drawer-6 {
+        transform: translate(10px, 240px);
+        flex-direction: row-reverse;
+        text-align: right;
+        align-items: end;
+      }
+    }
+
+    .cross-7 {
+      transform: translate(-145px, 45px);
+
+      + .drawer-7 {
+        transform: translate(-235px, 150px);
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        max-width: 300px;
+      }
+    }
+
+    .cross-8 {
+      transform: translate(100px, 115px);
+
+      + .drawer-8 {
+        transform: translate(610px, 180px);
+      }
+    }
+
+    .cross-9 {
+      transform: translate(90px, 180px);
+
+      + .drawer-9 {
+        transform: translate(30px, 230px);
+        flex-direction: row-reverse;
+        text-align: right;
+        align-items: end;
+      }
+    }
+
+    @media(max-width: 1200px) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+footer {
+  background-color: #0d0d0d;
+  padding: 70px 0 35px;
+  // text-align: center;
+  @extend %txt-cnr;
+  line-height: 1.55;
+  color: #9d9d9d;
+  font-size: 15px;
+
+  @media(max-width: 1111px) {
+    font-size: 14px;
+  }
+
+  b, a {
+    color: $bg-orange;
+  }
+
+  a {
+    box-shadow: 0 1px $bg-orange;
+  }
+}

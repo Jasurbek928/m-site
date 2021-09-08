@@ -1,0 +1,79 @@
+#stage {
+
+  .container {
+    padding-top: 3rem;
+  
+    h2 {
+      // text-align: center;
+      // margin: auto;
+      @extend %txt-cnr, %m-auto;
+      padding-bottom: 2rem;
+      color: $bg-orange;
+      max-width: 675px;
+      font-size: 36px;
+    }
+
+    .body {
+      // justify-content: center;
+      // display: flex;
+      @extend %df, %jcc;
+
+      .wrap {
+        // justify-content: center;
+        // align-items: center;
+        // display: flex;
+        @extend %jcc, %aic, %df;
+
+        div {
+          padding: 4rem .5rem 2.5rem .5rem;
+          // position: relative;
+          @extend %por;
+          margin-right: 1rem;
+          margin-left: 1rem;
+          max-width: 300px;
+        
+          b {
+            color: $color-light;
+            // position: absolute;
+            // user-select: none;
+            // text-align: center
+            // right: 0;
+            // left: 0;
+            // top: 0;
+            @extend %poa, %usn, %txt-cnr, %r-0, %l-0, %t-0;
+            line-height: 150px;
+            font-size: 190px;
+            z-index: -1;
+            opacity: .6;
+          }
+
+          h4 {
+            color: $color-secondary;
+            padding-bottom: 10px;
+            line-height: 1.35;
+            font-size: 18px;
+          }
+
+          p {
+            line-height: 1.3;
+          }
+        }
+      }
+      
+      @media(max-width: 960px) {
+        flex-direction: column;
+      }
+    }
+      
+    @media(max-width: 550px) {
+
+      h2 {
+        font-size: 32px;
+      }
+      
+      .body .wrap {
+        flex-direction: column;
+      }
+    }
+  }
+}

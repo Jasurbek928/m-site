@@ -1,0 +1,46 @@
+#contact {
+  padding: 150px 0 175px;
+  // text-align: center;
+  @extend %txt-cnr;
+  font-weight: bold;
+
+  h2 {
+    margin-bottom: 70px;
+  }
+  
+  p {
+    // color: $color-secondary;
+    @extend %c-2;
+    margin-bottom: 45px;
+    font-size: 20px;
+  }
+
+  span {
+    // display: block;
+    @extend %db;
+    line-height: 1.55;
+    font-size: 18px;
+
+    @media(max-width: 1111px) {
+      font-size: 16px;
+    }
+
+    a {
+      text-decoration: underline;
+      color: $bg-orange;
+    }
+  }
+  
+  .socials {
+    // justify-content: center;
+    // display: flex;
+    @extend %jcc, %df;
+    margin-top: 45px;
+
+    a {
+      color: $bg-orange;
+      width: 30px;
+      margin: 3px;
+    }
+  }
+}

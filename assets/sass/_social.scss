@@ -1,0 +1,32 @@
+#social {
+  padding: 3rem 0 5rem;
+
+  .brands {
+    // justify-content: center;
+    // display: flex;
+    @extend %jcc, %df;
+    padding-bottom: 6rem;
+
+    a {
+      border-radius: 50%;
+      color: $bg-orange;
+      // display: flex;
+      @extend %df;
+      height: 64px;
+      width: 64px;
+      margin: 7px;
+    }
+  }
+
+  .youtube {
+    iframe {
+      height: calc(35vw + 3.5rem);
+      width: calc(60vw + 7.5rem);
+      max-height: 700px;
+      max-width: 95%;
+      // display: block;
+      // margin: auto;
+      @extend %db, %m-auto;
+    }
+  }
+}
